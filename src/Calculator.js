@@ -8,15 +8,6 @@ function Calculator({ workouts, allowSound }) {
   const [durationBreak, setDurationBreak] = useState(5);
 
   const [duration, setDuration] = useState(0);
-
-  // const playSound = useCallback(
-  //   function () {
-  //     if (!allowSound) return;
-  //     const sound = new Audio(clickSound);
-  //     sound.play();
-  //   },
-  //   [allowSound]
-  // );
   useEffect(
     function () {
       const playSound = function () {
@@ -27,6 +18,12 @@ function Calculator({ workouts, allowSound }) {
       playSound();
     },
     [duration, allowSound]
+  );
+  useEffect(
+    function () {
+      document.title = `Your ${number}-exercise workout`;
+    },
+    [number]
   );
   useEffect(
     function () {
