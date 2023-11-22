@@ -19,6 +19,7 @@ function Calculator({ workouts, allowSound }) {
     },
     [duration, allowSound]
   );
+  
   useEffect(
     function () {
       document.title = `Your ${number}-exercise workout`;
